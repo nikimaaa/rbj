@@ -27,6 +27,5 @@ export default function cardsGenerator() {
             });
         }
     }
-
     return cards;
 }

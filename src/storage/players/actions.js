@@ -1,9 +1,21 @@
-import { ADD_CARD } from "./reducer";
+import { ADD_CARD, NEXT_PLAYER, START } from "./reducer";
 
-export function ADD_CARD(playerName, card) {
+export function addCard(card, playerNumber) {
     return {
         type: ADD_CARD,
-        playerName,
+        playerNumber,
         card
+    }
+}
+
+export function nextPlayer(){
+    return{
+        type: NEXT_PLAYER
+    }
+}
+
+export function clearCards(){
+    return{
+        type: START
     }
 }

@@ -1,16 +1,21 @@
 import React from 'react'
+
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import rootReducer from './storage/index'
+import {applyMiddleware, createStore} from 'redux'
+import thunk from "redux-thunk";
+
 import ControlPanel from "./components/ControlPanel";
 import PlayersList from './components/PlayersList';
+import rootReducer from './storage/index'
 
-const store = createStore(rootReducer)
+import './index.scss'
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 export default function App() {
     return (
         <Provider store={store}>
-            <div class="wrapper">
+            <div className="wrapper">
                 <PlayersList />
                 <ControlPanel />
             </div>

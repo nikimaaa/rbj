@@ -1,0 +1,114 @@
+$darkBg: #24242C;
+$loseBg: #32323d;
+$lightBg: #464656;
+$activeBg: #4fa171;
+
+@mixin card {
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin corners {
+    border-radius: 8px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+    color: #fff;
+    font-size: 20px;
+}
+
+.wrapper{
+    display: flex;
+    height: 100vh;
+}
+
+.players__wrapper{
+    flex: 8 1 auto;
+    background-color: $darkBg;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    height: 100%;
+    padding: 20px;
+    grid-gap: 20px;
+}
+
+.control__panel{
+    flex: 2 1 auto;
+    background-color: $lightBg;
+}
+
+.player__card{
+    background-color: $lightBg;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    transition: background-color .2s ease-out;
+    @include corners;
+}
+
+.player__card-active{
+    background-color: $activeBg;
+}
+
+.player__card-lose{
+    background-color: $loseBg;
+}
+
+.cards__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    height: 85px;
+    width: 55px;
+    margin-left: 20px;
+    @include card;
+    @include corners;
+}
+
+.card:first-child{
+    margin-left: 0;
+}
+
+.buttons__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+}
+
+.button__card{
+    width: 100%;
+    max-width: 170px;
+    flex: 1 1 auto;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: transform .2s ease-out;
+    @include card;
+    @include corners;
+}
+
+.button__card:hover{
+    transform: scale(0.95);
+}
+
+.button__card:last-child{
+    margin-bottom: 0;
+}

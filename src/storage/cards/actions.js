@@ -1,4 +1,4 @@
-import { REMOVE_CARD } from "./reducer";
+import {REMOVE_CARD} from "./reducer";
 
 export function removeCard(name) {
     return {
